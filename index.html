@@ -3,12 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>climate</title>
+    <link href="index.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f4357c5d62.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
-    <h1>CLIMATE</h1>
-    <p>Command Line Interface Manager</p>
-    <p>More updates here soon...</p>
-    <a href="https://github.com/fippli/climate">Library Source</a>
+    <header>
+      <span>CLIMATE</span>
+
+      <nav>
+        <a href="https://github.com/fippli/climate" class="social-icon"
+          ><i class="fab fa-github"></i
+        ></a>
+      </nav>
+    </header>
+
+    <section class="title-section">
+      <h1 class="title">climate<span id="cursor">|</span></h1>
+      <p>Climate is a minimalistic script manager written i bash.</p>
+      <p>
+        The purpose of climate is to make it easy for you to install and run
+        scripts that are published in a git repository, or makes your scripts
+        easy for others to install!
+      </p>
+    </section>
+
+    <main>
+      <section>
+        <h2 class="title">Installation</h2>
+        <p>
+          Detailed instructions are maintained in the
+          <a href="https://github.com/fippli/climate/blob/master/README.md"
+            >code repository readme</a
+          >. To quickly install you can run the command below:
+        </p>
+        <pre>
+          <code>bash <(curl -s https://raw.githubusercontent.com/fippli/climate/master/easy_install)</code>
+        </pre>
+        <p>
+          Make sure that you export <code>${HOME}/.climate/bin</code> to your
+          path.
+        </p>
+      </section>
+      <section>
+        <h2 class="title">Basic usage</h2>
+        <p>The main features of climate are install, remove, and update e.g.</p>
+        <h3>Install a package</h3>
+        <pre>
+          <code>climate install &lt;git-repository-url&gt;</code>
+        </pre>
+        <p>
+          This will clone the code from github and put it in
+          <code>${HOME}/.climate/bin/&lt;script-name&gt;</code>. Where
+          <code>&lt;script-name&gt;</code> is the name configured in the
+          <code>.climate</code> file in the package repository.
+        </p>
+
+        <h3>Update a package</h3>
+        <pre>
+          <code>climate update &lt;script-name&gt;</code>
+        </pre>
+        <p>
+          This will clone the recent code from the repository connected to the
+          <code>&lt;script-name&gt;</code> and replace the previous version.
+        </p>
+
+        <h3>Remove a package</h3>
+        <pre>
+          <code>climate remove &lt;script-name&gt;</code>
+        </pre>
+        <p>
+          Will remove all the files associsated with the
+          <code>&lt;script-name&gt;</code>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="https://github.com/fippli/climate" class="social-icon"
+        ><i class="fab fa-github"></i
+      ></a>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
